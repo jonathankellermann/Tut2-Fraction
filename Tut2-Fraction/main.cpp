@@ -26,7 +26,7 @@ public:
 	{
 		num = num*d;
 		den = den*d;
-		num += n;
+		num += n*(den / d);
 
 	}
 
@@ -34,7 +34,7 @@ public:
 	{
 		num = num*d;
 		den = den*d;
-		num -= n;
+		num -= n*(den / d);
 
 	}
 
