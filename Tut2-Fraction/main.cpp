@@ -50,18 +50,20 @@ public:
 		den = den*n;
 	}
 
-	int simplyfy(int n, int d)
+	int GCD(int n, int d)
 	{
 		if ((n % d) == 0)
 			return n;
 		else
-			return simplyfy(d, n % d);
+			return GCD(d, n % d);
 	
 	}
 
 	void print()
 	{
-		simplyfy(num, den);
+		int div =GCD(num, den);
+		num /= div;
+		den /= div;
 		cout << "Ans -"<< num << "/" << den << endl;
 
 			
@@ -73,13 +75,22 @@ public:
 int main()
 {
 	Fraction myFraction;
+	//Addition Test
 	myFraction.setNumDenom(4,5);
 	myFraction.add(1,2);
 	myFraction.print();
-	myFraction.setNumDenom(4, 5);
-	myFraction.subtract(1, 2);
+	//Subtract Test
+	myFraction.setNumDenom(4,5);
+	myFraction.subtract(1,2);
 	myFraction.print();
-
+	// Multiply Test
+	myFraction.setNumDenom(250, 500);
+	myFraction.multiply(1, 2);
+	myFraction.print();
+	//Divide Test
+	myFraction.setNumDenom(250, 500);
+	myFraction.divide(1, 2);
+	myFraction.print();
 
 	return 0;
 };
