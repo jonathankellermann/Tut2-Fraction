@@ -18,8 +18,8 @@ public:
 
 	void setNumDenom(int n, int d)
 	{
-		n = num;
-		d = den;
+		num=n;
+		den=d;
 	}
 
 	void add(int n, int d)
@@ -52,8 +52,9 @@ public:
 
 	void print()
 	{
-	
-	
+		cout << num << endl;
+		cout << "/" << endl;
+		cout << den << endl;
 	
 	}
 	
@@ -61,6 +62,13 @@ public:
 
 int main()
 {
+	Fraction myFraction;
+	myFraction.setNumDenom(4,5);
+	myFraction.add(1,2);
+	myFraction.print();
+	myFraction.setNumDenom(4, 5);
+	myFraction.subtract(1, 2);
+	myFraction.print();
 
 
 	return 0;
