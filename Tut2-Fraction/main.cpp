@@ -50,13 +50,23 @@ public:
 		den = den*n;
 	}
 
-	void print()
+	int simplyfy(int n, int d)
 	{
-		cout << num << endl;
-		cout << "/" << endl;
-		cout << den << endl;
+		if ((n % d) == 0)
+			return n;
+		else
+			return simplyfy(d, n % d);
 	
 	}
+
+	void print()
+	{
+		simplyfy(num, den);
+		cout << "Ans -"<< num << "/" << den << endl;
+
+			
+	}
+	
 	
 };
 
