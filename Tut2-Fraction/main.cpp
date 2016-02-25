@@ -24,20 +24,16 @@ public:
 
 	void add(int n, int d)
 	{
-		int temp = den;
 		num = num*d;
+		num += n*den;
 		den = den*d;
-		num += n*temp;
-
 	}
 
 	void subtract(int n, int d)
 	{
-		int temp = den;
 		num = num*d;
+		num -= n*den;
 		den = den*d;
-		num -= n*temp;
-
 	}
 
 	void multiply(int n, int d)
@@ -51,14 +47,13 @@ public:
 		num = num*d;
 		den = den*n;
 	}
-
+//Greatest Common Factor 
 	int GCF(int n, int d)
 	{
 		if (d == 0)
 			return n;
 		else
 			return GCF(d, n % d);
-	
 	}
 
 	void print()
@@ -66,9 +61,7 @@ public:
 		int div =GCF(num, den);
 		num /= div;
 		den /= div;
-		cout << "Ans -> "<< num << "/" << den << endl;
-
-			
+		cout << "Ans -> "<< num << "/" << den << endl;		
 	}
 	
 	
