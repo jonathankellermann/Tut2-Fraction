@@ -24,17 +24,19 @@ public:
 
 	void add(int n, int d)
 	{
+		int temp = den;
 		num = num*d;
 		den = den*d;
-		num += n*(den / d);
+		num += n*temp;
 
 	}
 
 	void subtract(int n, int d)
 	{
+		int temp = den;
 		num = num*d;
 		den = den*d;
-		num -= n*(den / d);
+		num -= n*temp;
 
 	}
 
@@ -50,21 +52,21 @@ public:
 		den = den*n;
 	}
 
-	int GCD(int n, int d)
+	int GCF(int n, int d)
 	{
-		if ((n % d) == 0)
+		if (d == 0)
 			return n;
 		else
-			return GCD(d, n % d);
+			return GCF(d, n % d);
 	
 	}
 
 	void print()
 	{
-		int div =GCD(num, den);
+		int div =GCF(num, den);
 		num /= div;
 		den /= div;
-		cout << "Ans -"<< num << "/" << den << endl;
+		cout << "Ans -> "<< num << "/" << den << endl;
 
 			
 	}
@@ -76,19 +78,19 @@ int main()
 {
 	Fraction myFraction;
 	//Addition Test
-	myFraction.setNumDenom(4,5);
+	myFraction.setNumDenom(1,2);
 	myFraction.add(1,2);
 	myFraction.print();
 	//Subtract Test
-	myFraction.setNumDenom(4,5);
-	myFraction.subtract(1,2);
+	myFraction.setNumDenom(12,16);
+	myFraction.subtract(1,4);
 	myFraction.print();
 	// Multiply Test
-	myFraction.setNumDenom(250, 500);
-	myFraction.multiply(1, 2);
+	myFraction.setNumDenom(25, 100);
+	myFraction.multiply(2, 1);
 	myFraction.print();
 	//Divide Test
-	myFraction.setNumDenom(250, 500);
+	myFraction.setNumDenom(1500, 1000);
 	myFraction.divide(1, 2);
 	myFraction.print();
 
