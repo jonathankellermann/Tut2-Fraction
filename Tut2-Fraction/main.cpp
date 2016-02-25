@@ -1,3 +1,7 @@
+/*	Jonathan Kellermann
+	214502067
+	Fraction Class
+*/
 #include <iostream>
 
 using namespace std;
